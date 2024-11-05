@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Price Regression Project Walkthrough</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      margin-top: 20px;
+      margin-bottom: 5px; /* Reduces space below header */
+    }
+    .links {
+      margin: 0; /* Removes extra space between links */
+      font-size: 1.1rem;
+    }
+    .links a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+    .links a:hover {
+      color: #0056b3;
+    }
+    p.description {
+      margin-top: 5px;
+      font-size: 1rem;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .image-card {
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .image-card img {
+      width: 100%;
+      height: auto;
+    }
+    .caption {
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Car Price Regression Project Walkthrough</h1>
+  
+  <!-- Links Section -->
+  <div class="links">
+    <p><a href="https://docs.google.com/presentation/d/1KWLKnEVQyT7eh3RcCavQVK2WdZl4BnURAupguNdQCFU/edit#slide=id.p" target="_blank">Link to Full Presentation</a></p>
+    <p><a href="https://github.com/pgrts/Springboard/tree/main/capstone_two" target="_blank">GitHub Repository</a></p>
+  </div>
+
+  <!-- Description Text -->
+  <p class="description">Follow the steps to see how the car price prediction model was built and analyzed.</p>
+
+  <!-- Image Grid -->
+  <div class="container">
+    <!-- Image and caption cards describing steps -->
+    <div class="image-card">
+      <img src="data_collection.jpg" alt="Data Collection">
+      <div class="caption">Data Cleaning: NHTSA API, VIN listings Only, Imputations</div>
+    </div>
+    <div class="image-card">
+      <img src="odometer_bodyclass_coef.png" alt="Data Cleaning 2">
+      <div class="caption">EDA: BodyClass & Rates of Depreciation</div>
+	  <p>Linear Regression using Odometer and Year: Coupes and Convertibles depreciation faster</p>
+    </div>		
+    <div class="image-card">
+      <img src="chi_sq_state_pickup.png" alt="Data Cleaning">
+      <div class="caption">EDA: BodyClass & Location</div>
+	  <p>Blah Blah Chi Square</p>
+    </div>
+    <div class="image-card">
+      <img src="model_test.png" alt="Exploratory Data Analysis">
+      <div class="caption">Step 3: Model Selection: CatBoost</div>
+    </div>
+    <div class="image-card">
+      <img src="make_model_srs_trim_svd.png" alt="Feature Engineering">
+      <div class="caption">Step 4: Feature Engineering: state, region, state_income, Series, Trim</div>
+    </div>
+    <div class="image-card">
+      <img src="mile_price_outlier.png" alt="Model Selection">
+      <div class="caption">Step 5: Outlier Detection</div>
+    </div>
+    <div class="image-card">
+      <img src="lev_point.png" alt="Model Training">
+      <div class="caption">Step 6: Leverage Points on Outliers</div>
+    </div>
+    <div class="image-card">
+      <img src="catboost_perf.png" alt="Model Evaluation">
+      <div class="caption">Step 7: Performance Increase</div>
+    </div>
+    <div class="image-card">
+      <img src="dep_curve.png" alt="Model Deployment">
+      <div class="caption">Step 8: Depreciation Curves: Compare with Similar Vehicles (KNN Classifier)</div>
+    </div>
+  </div>
+
+</body>
+</html>
